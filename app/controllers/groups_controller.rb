@@ -61,6 +61,7 @@ class GroupsController < ApplicationController
 
       if current_user.is_member_of?(@group)
         current_user.quit!(@group)
+        flash[:alert] = "已退出本讨论版"
       else
         flash[:warning] = "你不是本讨论版成员，怎么退出 WXM"
       end
